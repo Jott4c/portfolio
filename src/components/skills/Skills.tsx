@@ -30,11 +30,11 @@ const stackData = [
     img: FaReact,
   },
   {
-    title: "HTML",
+    title: "HTML5",
     img: FaHtml5,
   },
   {
-    title: "CSS",
+    title: "CSS3",
     img: FaCss3Alt,
   },
   { title: "Docker", img: FaDocker },

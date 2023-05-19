@@ -4,12 +4,17 @@ import Projects from "../components/projects/Projects";
 import Skills from "@/components/skills/Skills";
 import Contact from "@/components/contact/Contact";
 import { IProject, IProps } from "@/interfaces";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+import "swiper/css";
+import "swiper/css/effect-cards";
+
+import "swiper/css/pagination";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/footer";
 
 export const Home: NextPage<IProps> = ({ projects }) => {
   return (
-    <>
+    <main>
       <div id="about">
         <About />
       </div>
@@ -22,7 +27,8 @@ export const Home: NextPage<IProps> = ({ projects }) => {
       <div id="contact">
         <Contact />
       </div>
-    </>
+      <Footer />
+    </main>
   );
 };
 

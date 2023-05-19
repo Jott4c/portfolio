@@ -2,21 +2,43 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  height: 100vh;
-  padding-top: 10vh;
+  height: 80vh;
 
   h2 {
-    font-size: 4rem;
-    font-weight: 900;
-    letter-spacing: 1rem;
-    color: #ff266a;
+    align-self: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+
+  a {
+    text-decoration: none;
   }
   .socias-box {
     width: 50%;
-    height: 80%;
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+
+    div {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    @media screen and (max-width: 760px) {
+      width: 100%;
+
+      div {
+        gap: 1rem;
+        margin-top: 3rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
   }
   .facebook {
     color: #3b5998;
@@ -51,18 +73,33 @@ export const Container = styled.div`
   }
 
   .image-box {
-    width: 50%;
-    height: 90%;
+    height: 100%;
+    width: 40%;
     margin-left: auto;
-    align-self: flex-end;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media screen and (max-width: 760px) {
+      margin: 0;
+      width: 80%;
+      height: 50%;
+      img {
+      }
+    }
   }
 
-  .content-box {
-    width: 50%;
-    height: 100%;
+  .content-primary {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 3rem;
+    justify-content: space-between;
+    padding: 4rem 10% 0 10%;
+    @media screen and (max-width: 760px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
 `;

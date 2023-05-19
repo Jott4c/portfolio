@@ -1,22 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
-import { GrLinkedinOption } from "react-icons/gr";
-import { Header, Nav, NavItem, NavList } from "./styles";
-import Image from "next/image";
-import logo from "../../assets/images/icon.png";
-import Link from "next/link";
+import { useState } from "react";
 import { NextPage } from "next";
-import Menu from "../menuMobile/MenuMobile";
+import Link from "next/link";
+import { Container, NavList, NavItem } from "./styles";
+import { CgMenuGridO } from "react-icons/cg";
+import { FaFacebookF, FaGithub, FaInstagram } from "react-icons/fa";
+import { GrLinkedinOption } from "react-icons/gr";
 
-const Navbar: NextPage = () => {
+const MenuMobile: NextPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <Header>
-      <Nav>
-        <Link href="#about" className="logo">
-          <Image src={logo} alt="logo" />
-        </Link>
-        <Menu />
-        <NavList>
+    <Container>
+      <button className="button-menu" onClick={handleMenu}>
+        <CgMenuGridO />
+      </button>
+
+      {isOpen && (
+        <NavList onClick={handleMenu}>
           <NavItem>
             <Link href="#about">About</Link>
           </NavItem>
@@ -33,32 +37,28 @@ const Navbar: NextPage = () => {
             <Link href="https://www.facebook.com/Jrcunha123" target="_blank">
               <FaFacebookF />
             </Link>
-          </NavItem>
-          <NavItem>
             <Link
               href="https://www.instagram.com/juniior.alencar/"
               target="_blank"
             >
               <FaInstagram />
             </Link>
-          </NavItem>
-          <NavItem>
+
             <Link
               href="https://www.linkedin.com/in/junior-alencar-b961b1236/"
               target="_blank"
             >
               <GrLinkedinOption />
             </Link>
-          </NavItem>
-          <NavItem>
+
             <Link href="https://github.com/Jott4c" target="_blank">
               <FaGithub />
             </Link>
           </NavItem>
         </NavList>
-      </Nav>
-    </Header>
+      )}
+    </Container>
   );
 };
 
-export default Navbar;
+export default MenuMobile;

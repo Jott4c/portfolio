@@ -10,18 +10,25 @@ export const Container = styled.div`
   .image-box {
     margin-left: auto;
     height: 100%;
-  }
 
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+  }
   .stack-box {
-    margin-top: 3rem;
+    margin-top: 15vh;
     width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1rem;
     color: #d0d0d0;
     font-size: 5rem;
-    gap: 3rem;
+
+    @media screen and (max-width: 900px) {
+      width: 90%;
+      justify-self: center;
+    }
   }
 `;
 
